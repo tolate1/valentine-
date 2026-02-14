@@ -59,8 +59,8 @@ function App() {
   const [isShaking, setIsShaking] = useState(false);
   const [noChoice, setNoChoice] = useState(false);
 
-  // Increase cap to allow it to get quite big, but CSS will constrain it to viewport
-  const yesButtonSize = Math.min(noCount * 20 + 16, 300);
+  // Limit button size to prevent it from being too large on mobile
+  const yesButtonSize = Math.min(noCount * 15 + 16, 120);
 
   function handleNoClick() {
     // Locks only active after 10 clicks
