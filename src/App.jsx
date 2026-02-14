@@ -1,5 +1,5 @@
 
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import './index.css'
 import cartuGif from './assets/cartu.gif'
 import yunoGif from './assets/yuno-cute.gif'
@@ -61,6 +61,7 @@ function App() {
 
   // Limit button size to prevent it from being too large on mobile
   const yesButtonSize = Math.min(noCount * 15 + 16, 120);
+  const noButtonRef = useRef(null);
 
   function handleNoClick() {
     // Locks only active after 10 clicks
@@ -85,6 +86,16 @@ function App() {
     }
 
     setNoCount(noCount + 1);
+
+    // Scroll to the No button after state update
+    setTimeout(() => {
+      if (noButtonRef.current) {
+        noButtonRef.current.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center'
+        });
+      }
+    }, 100);
   }
 
   const allLocksBroken = locks.every(lock => lock.isBroken);
@@ -137,6 +148,7 @@ function App() {
             {noChoice && <span className="arrow arrow-right">👈</span>}
           </button>
           <button
+            ref={noButtonRef}
             onClick={handleNoClick}
             className={`btn btn-no ${isShaking ? 'shake' : ''}`}
             style={noChoice ? { display: 'none' } : {}}
