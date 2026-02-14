@@ -59,8 +59,8 @@ function App() {
   const [isShaking, setIsShaking] = useState(false);
   const [noChoice, setNoChoice] = useState(false);
 
-  // Limit button size to prevent it from being too large on mobile
-  const yesButtonSize = Math.min(noCount * 15 + 16, 120);
+  // Button grows progressively with each "No" click
+  const yesButtonSize = Math.min(noCount * 18 + 16, 200);
   const noButtonRef = useRef(null);
 
   function handleNoClick() {
