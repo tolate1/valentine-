@@ -50,6 +50,7 @@ body {
   text-align: center;
   max-width: 95%;
   width: 100%;
+  padding-bottom: max(80px, env(safe-area-inset-bottom));
 }
 
 .bg-red-gradient {
