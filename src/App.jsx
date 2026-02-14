@@ -125,7 +125,7 @@ function App() {
             className="bear-img"
           />
         )}
-        <h1 className="text">{noChoice ? "Ты не оставила мне выбора..." : "Будешь моим Валентином?"}</h1>
+        <h1 className="text">{noChoice ? "Ты не оставила мне выбора..." : "Лена, будешь моим Валентином?"}</h1>
         <div className="buttons">
           <button
             className="btn btn-yes"
