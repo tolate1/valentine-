@@ -149,6 +149,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100px;
+  padding-bottom: 50vh;
 }
 
 .btn {
